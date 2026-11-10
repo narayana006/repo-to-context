@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "repo-to-context"
+version = "0.1.0"
+description = "Pack a code repository into LLM-ready context: gitignore-aware, token-budgeted, importance-ranked."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Narayana Vemburaj" }]
+keywords = ["llm", "context", "prompt", "repository", "gitignore"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Environment :: Console",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+repo-to-context = "repo_to_context.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/narayana006/repo-to-context"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
